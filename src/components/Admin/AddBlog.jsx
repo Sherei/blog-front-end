@@ -131,7 +131,7 @@ const AddBlog = () => {
                 </div>
                 <div className='col-lg-6  col-md-6 col-sm-12  my-2'>
                   <label style={{ fontSize: "17px", fontWeight: "600" }}>Author Name *</label>
-                  <input type="text" {...register('author', { required: true })} defaultValue="Ming Mingle" className="form-control mb-2 mr-sm-2" />
+                  <input type="text" {...register('author', { required: true })} value="Ming Mingle" className="form-control mb-2 mr-sm-2" />
                   {errors.author && errors.author.type == "required" ? <div className='error'>Author Name is required</div> : null}
                 </div>
                 <div className='col-lg-6  col-md-6 col-sm-12  my-2'>
