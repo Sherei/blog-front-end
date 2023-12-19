@@ -13,19 +13,16 @@ const Home = () => {
   const move = useNavigate()
 
   useEffect(() => {
+
     setLoading(true);
     try {
-      axios.get(`${process.env.REACT_APP_BASE_URL}/blog`).then((res) => {
+      axios.get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/blog`).then((res) => {
         setBlog(res?.data);
       }).finally(() => {
         setLoading(false);
       });
     } catch (e) {
-      return <>
-        <div className='col-lg-12 col-sm-12 d-flex align-items-center justify-content-center' style={{ height: "50vh" }} >
-          <Loader />
-        </div>
-      </>
+
     }
   }, []);
 

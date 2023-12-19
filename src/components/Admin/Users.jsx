@@ -11,7 +11,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3020/Users`)
+      .get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/Users`)
       .then((res) => {
         setUsers(res.data);
         setIsLoading(false);
@@ -36,7 +36,7 @@ const Users = () => {
   });
 
   const DeleteUser = (dataId) => {
-    axios.delete(`http://localhost:3020/deleteUser?id=${dataId}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_REACT_APP_BASE_URL}/deleteUser?id=${dataId}`).then(() => {
       setUsers(Users.filter((item) => dataId !== item._id));
       toast.success("User removed");
     });

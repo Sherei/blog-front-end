@@ -23,7 +23,7 @@ const BlogDetail = () => {
     setLoading(true);
     try {
       axios
-        .get(`${process.env.REACT_APP_BASE_URL}/singleBlog?id=${blogId}`)
+        .get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/singleBlog?id=${blogId}`)
         .then((res) => {
           setBlog(res.data);
         });
@@ -39,7 +39,7 @@ const BlogDetail = () => {
     try {
 
       const commentWithProductId = { ...cmnt, blogId };
-      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/comments`, commentWithProductId);
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BASE_URL}/comments`, commentWithProductId);
       if (response.data.message === "Feedback submitted") {
         dispatch({
           type: "ADD_COMMENT",
@@ -60,7 +60,7 @@ const BlogDetail = () => {
   useEffect(() => {
     setLoading(true);
     try {
-      axios.get(`${process.env.REACT_APP_BASE_URL}/comments`).then((res) => {
+      axios.get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/comments`).then((res) => {
         if (res) {
           dispatch({ type: "ADD_COMMENT", payload: res.data });
         }

@@ -17,7 +17,7 @@ const Comments = () => {
   useEffect(() => {
     setLoading(true);
     try {
-      axios.get(`${process.env.REACT_APP_BASE_URL}/comments`).then((res) => {
+      axios.get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/comments`).then((res) => {
         if (res) {
           dispatch({ type: "ADD_COMMENT", payload: res.data });
         }
@@ -52,7 +52,7 @@ const Comments = () => {
     try {
       setLoading(true);
       const resp = await axios.delete(
-        `${process.env.REACT_APP_BASE_URL}/deleteComment?id=${dataId}`
+        `${import.meta.env.VITE_REACT_APP_BASE_URL}/deleteComment?id=${dataId}`
       );
       if (resp.data.message === "success") {
         dispatch({

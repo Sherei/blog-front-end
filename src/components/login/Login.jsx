@@ -35,7 +35,7 @@ const Login = () => {
             behavior: 'smooth'
         });
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, data)
+            const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BASE_URL}/login`, data)
             let loginUser = response.data;
             if (loginUser) {
                 localStorage.setItem("userToken", loginUser.myToken);

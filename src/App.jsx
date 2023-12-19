@@ -18,8 +18,9 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+
     try {
-      axios.post(`${process.env.REACT_APP_BASE_URL}/session-check`, { token: localStorage.getItem('userToken') }).then((res) => {
+      axios.post(`${import.meta.env.VITE_REACT_APP_BASE_URL}/session-check`, { token: localStorage.getItem('userToken') }).then((res) => {
         if (res.data) {
           dispatch({
             type: 'LOGIN_USER',

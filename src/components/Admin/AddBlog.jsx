@@ -36,7 +36,7 @@ const AddBlog = () => {
   useEffect(() => {
     try {
       if (blogId) {
-        axios.get(`${process.env.REACT_APP_BASE_URL}/blog_edit?id=${blogId}`).then(function (resp) {
+        axios.get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/blog_edit?id=${blogId}`).then(function (resp) {
           setBlog(resp.data);
         });
       }
@@ -76,7 +76,7 @@ const AddBlog = () => {
     if (blogId) {
       data.image = cloudinaryUrl;
       try {
-        const response = await axios.put(`${process.env.REACT_APP_BASE_URL}/blog_update`, data);
+        const response = await axios.put(`${import.meta.env.VITE_REACT_APP_BASE_URL}/blog_update`, data);
         setLoading(false);
         toast.success("Blog updated");
         move('/admin-dashboard');
@@ -87,7 +87,7 @@ const AddBlog = () => {
     } else {
       data.image = cloudinaryUrl;
       try {
-        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/blog`, data);
+        const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BASE_URL}/blog`, data);
         if (response.data) {
           toast.success("Blog Uploaded");
           reset();

@@ -16,7 +16,7 @@ const Blogs = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_BASE_URL}/blog`)
+      .get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/blog`)
       .then((res) => {
         setblog(res?.data);
         setIsLoading(false);
@@ -44,7 +44,7 @@ const Blogs = () => {
   });
 
   const Deleteblog = (dataId) => {
-    axios.delete(`${process.env.REACT_APP_BASE_URL}/deleteBlog?id=${dataId}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_REACT_APP_BASE_URL}/deleteBlog?id=${dataId}`).then(() => {
       setblog(blog.filter((item) => dataId !== item._id));
       toast.success("blog Removed")
     });

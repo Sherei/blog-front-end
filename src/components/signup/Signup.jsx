@@ -30,12 +30,10 @@ const Signup = () => {
             top: 0,
             behavior: 'smooth'
         });
-        // if (data.password != data.cpassword) {
-        //     return setError("Password")
-        // }
+    
         console.log("Signup data is::", data)
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/signup`, data);
+            const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BASE_URL}/signup`, data);
             if (response.data === "User Created") {
                 toast.success("Account Created")
                 move('/login')
@@ -126,21 +124,6 @@ const Signup = () => {
                                 {showPassword ? <FaEyeSlash /> : <FaEye />}
                             </button>
                         </div>
-                        {/* <div className="input-group mb-3">
-                            <label htmlFor="" className='mb-1'>Confirm Password *</label>
-                            <input required="true"
-                                type={showPassword ? "text" : "password"}
-                                className="form-control w-100"
-                                {...register('cpassword', { required: true })} />
-                            {errors.password ? <div className='error'>Please Retype your password </div> : null}
-                            <button
-                                type="button"
-                                className="password-toggle-btn"
-                                onClick={togglePasswordVisibility}
-                            >
-                                {showPassword ? <FaEyeSlash /> : <FaEye />}
-                            </button>
-                        </div> */}
                         <button className="btn rounded login_btn mt-3">
                             Register
                         </button>
