@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     try {
-      axios.get(`http://localhost:3020/blog`).then((res) => {
+      axios.get(`${process.env.REACT_APP_BASE_URL}/blog`).then((res) => {
         setBlog(res?.data);
       }).finally(() => {
         setLoading(false);

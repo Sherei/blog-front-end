@@ -16,7 +16,7 @@ const Blogs = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3020/blog`)
+      .get(`${process.env.REACT_APP_BASE_URL}/blog`)
       .then((res) => {
         setblog(res?.data);
         setIsLoading(false);
@@ -44,7 +44,7 @@ const Blogs = () => {
   });
 
   const Deleteblog = (dataId) => {
-    axios.delete(`http://localhost:3020/deleteBlog?id=${dataId}`).then(() => {
+    axios.delete(`${process.env.REACT_APP_BASE_URL}/deleteBlog?id=${dataId}`).then(() => {
       setblog(blog.filter((item) => dataId !== item._id));
       toast.success("blog Removed")
     });

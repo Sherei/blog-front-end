@@ -24,7 +24,7 @@ const Dashboard = () => {
   const move = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3020/dashboard`).then((res) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/dashboard`).then((res) => {
       setUsers(res.data.Users)
       setBlogs(res.data.Blogs)
       setComments(res.data.comments)

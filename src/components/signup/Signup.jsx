@@ -35,7 +35,7 @@ const Signup = () => {
         // }
         console.log("Signup data is::", data)
         try {
-            const response = await axios.post("http://localhost:3020/signup", data);
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/signup`, data);
             if (response.data === "User Created") {
                 toast.success("Account Created")
                 move('/login')

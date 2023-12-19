@@ -17,7 +17,7 @@ const Comments = () => {
   useEffect(() => {
     setLoading(true);
     try {
-      axios.get(`http://localhost:3020/comments`).then((res) => {
+      axios.get(`${process.env.REACT_APP_BASE_URL}/comments`).then((res) => {
         if (res) {
           dispatch({ type: "ADD_COMMENT", payload: res.data });
         }
@@ -52,7 +52,7 @@ const Comments = () => {
     try {
       setLoading(true);
       const resp = await axios.delete(
-        `http://localhost:3020/deleteComment?id=${dataId}`
+        `${process.env.REACT_APP_BASE_URL}/deleteComment?id=${dataId}`
       );
       if (resp.data.message === "success") {
         dispatch({
