@@ -1,0 +1,21 @@
+.dashboard_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: larger;
+    font-weight: 700;
+    color: darkblue;
+}
+.dashboard_box:hover{
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    transform: scale(1.02);
+    transition: all linear 0.3s;
+}
+.activeComponent{
+    background-color: darkblue;
+    color: white;
+}

@@ -1,0 +1,61 @@
+.login_div {
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    width: 320px;
+    height: fit-content;
+    background-color: lightgray;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 100 !important;
+  }
+  
+  .login_div::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    right: 80px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid lightgray;
+  }
+  
+  .login_div::-webkit-scrollbar-thumb {
+    background: #1b2950;
+    border-radius: 50rem;
+    max-height: 40px !important;
+  }
+  
+  .login_div::-webkit-scrollbar {
+    width: 7px;
+    max-height: 10px !important;
+  }
+  
+  .login_div p {
+    color: #1b2950 !important;
+  }
+  .password-toggle-btn{
+    position: absolute;
+    top: 32px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 102;
+}
+.login_btn{
+    width: 100%;
+    background-color: darkblue;
+    color: white;
+}
+.login_btn:hover{
+    color: white;
+}
+input{
+  outline: 1px solid darkblue;
+  background-color: transparent !important;
+}
+label{
+  font-weight: 600;
+}
