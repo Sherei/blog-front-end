@@ -5,13 +5,13 @@ import AddBlog from "./components/Admin/AddBlog"
 import BlogDetail from "./components/blog detail/BlogDetail"
 import Login from './components/login/Login'
 import Signup from './components/signup/Signup'
+import Dashboard from './components/Admin/Dashboard'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from 'react-redux'
-import axios from 'axios'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios'
 import './App.css'
-import Dashboard from './components/Admin/Dashboard'
 
 function App() {
 
@@ -54,7 +54,7 @@ function App() {
         minWidth: "250px",
       }}
       position="top-center"
-      autoClose={1500}
+      autoClose={2500}
       hideProgressBar={false}
       newestOnTop={false}
       closeOnClick

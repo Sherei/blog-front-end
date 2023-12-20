@@ -30,7 +30,7 @@ const Signup = () => {
             top: 0,
             behavior: 'smooth'
         });
-    
+
         console.log("Signup data is::", data)
         try {
             const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BASE_URL}/signup`, data);
@@ -50,7 +50,7 @@ const Signup = () => {
             }
         }
     }
-    
+
     useEffect(() => {
         if (Error) {
             const timeoutId = setTimeout(() => {
@@ -79,17 +79,18 @@ const Signup = () => {
                         }
                         <div className="input-group my-4">
                             <label htmlFor="" className='mb-1'>Enter Your Name *</label>
-                            <input type="text" className="form-control w-100" {...register('name', { required: true })} />
+                            <input type="text" placeholder='joe' className="form-control w-100" {...register('name', { required: true })} />
                             {errors.name ? <div className='error'>Name is required </div> : null}
                         </div>
                         <div className="input-group my-4">
                             <label htmlFor="" className='mb-1'>Enter Your username *</label>
-                            <input type="text" className="form-control w-100" {...register('username', { required: true })} />
+                            <input type="text" placeholder='joe123' className="form-control w-100" {...register('username', { required: true })} />
                             {errors.username ? <div className='error'>Username is required </div> : null}
                         </div>
                         <div className="input-group my-4">
                             <label htmlFor="" className='mb-1'>Enter Your Email *</label>
-                            <input required="true"
+                            <input placeholder='joe123@gmail.com'
+                                required="true"
                                 type="email"
                                 className="form-control w-100" {...register('email', {
                                     required: true, validate: function (typedValue) {
@@ -110,7 +111,7 @@ const Signup = () => {
                             {errors.birthdate ? <div className='error'>birthdate is required </div> : null}
                         </div>
                         <div className="input-group mb-3">
-                            <label htmlFor="" className='mb-1'>Enter Password *</label>
+                            <label htmlFor="" placeholder='*******' className='mb-1'>Enter Password *</label>
                             <input required="true"
                                 type={showPassword ? "text" : "password"}
                                 className="form-control w-100"

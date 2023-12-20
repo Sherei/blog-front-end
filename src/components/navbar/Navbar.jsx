@@ -131,17 +131,19 @@ const Navbar = () => {
               <RxCross1 />
             </div>
           </div>
-        
+
           <form action="" onSubmit={handleSubmit(Login)}>
-          {Error === "Invalid Credentials" && (
-            <div className="error mb-3">
-              {" "}
-              Invalid Credentials{" "}
-            </div>
-          )}
+            {Error === "Invalid Credentials" && (
+              <div className="error mb-3">
+                {" "}
+                Invalid Credentials{" "}
+              </div>
+            )}
             <div className="input-group my-2">
               <label htmlFor="" className='mb-1'>Enter Your Email *</label>
-              <input required="true"
+              <input
+                placeholder='joe123@gmail.com'
+                required="true"
                 type="email"
                 className="form-control w-100" {...register('email', {
                   required: true, validate: function (typedValue) {
@@ -157,9 +159,9 @@ const Navbar = () => {
               {errors.email ? <div className='error'>Email is required </div> : null}
             </div>
             <div className="input-group mb-3" style={{ position: "relative" }}>
-              <label htmlFor="" className='mb-1'>Enter Password *</label>
+              <label htmlFor="" placeholder="******" className='mb-1'>Enter Password *</label>
               <input required="true"
-                 type={showPassword ? "text" : "password"}
+                type={showPassword ? "text" : "password"}
                 className="form-control w-100"
                 {...register('password', { required: true })} />
               {errors.password ? <div className='error'>Passowrd is required </div> : null}
@@ -169,7 +171,7 @@ const Navbar = () => {
                 onClick={togglePasswordVisibility}
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button> 
+              </button>
             </div>
             <button className="btn rounded login_btn mt-3">
               Login

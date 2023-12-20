@@ -88,17 +88,18 @@ const Login = () => {
                             Enter your email and password
                         </p>
                     </div>
-                
+
                     <form action="" onSubmit={handleSubmit(Login)}>
-                    {Error === "Invalid Credentials" && (
-                        <div className="error mb-3">
-                            {" "}
-                            Invalid Credentials{" "}
-                        </div>
-                    )}
+                        {Error === "Invalid Credentials" && (
+                            <div className="error mb-3">
+                                {" "}
+                                Invalid Credentials{" "}
+                            </div>
+                        )}
                         <div className="input-group my-4">
                             <label htmlFor="" className='mb-1'>Enter Your Email *</label>
                             <input required="true"
+                                placeholder='joe123@gmail.com'
                                 type="email"
                                 className="form-control w-100" {...register('email', {
                                     required: true, validate: function (typedValue) {
@@ -115,7 +116,9 @@ const Login = () => {
                         </div>
                         <div className="input-group mb-3">
                             <label htmlFor="" className='mb-1'>Enter Password *</label>
-                            <input required="true"
+                            <input
+                                placeholder='*******'
+                                required="true"
                                 type={showPassword ? "text" : "password"}
                                 className="form-control w-100"
                                 {...register('password', { required: true })} />
