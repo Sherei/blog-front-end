@@ -85,7 +85,7 @@ const Navbar = () => {
 
   return <>
     <>
-      <div className="container-fluid px-5 py-3" style={{ backgroundColor: "darkblue" }}>
+      <div className="container-fluid px-lg-5 px-md-5 px-2 py-3" style={{ backgroundColor: "darkblue" }}>
         <div className='row'>
           <div className='col d-flex justify-content-between align-items-center'>
             <div>
