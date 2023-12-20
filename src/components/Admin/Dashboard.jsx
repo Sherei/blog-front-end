@@ -46,7 +46,7 @@ const Dashboard = () => {
   return <>
     <div className='container '>
       <p className='text-center fw-bolder fs-3 mt-5 mb-3' style={{ color: "darkblue" }}>Welcome to Admin Panel</p>
-      <div className='row  row-cols-2 row-cols-md-3 row-cols-lg-4 px-5 g-4'>
+      <div className='row  row-cols-2 row-cols-md-3 row-cols-lg-4 px-lg-5 px-md-5 px-2 g-4'>
         {data.map((item, index) => {
           return <div className={`col border dashboard_box ${item.path === component ? 'activeComponent' : ''}`}
             key={index}
